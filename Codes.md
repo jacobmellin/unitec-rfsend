@@ -5,8 +5,8 @@
 Type: 48110  
 Receiver: 55006x10
 
-1 = 1000us HIGH, 500us LOW  
-0 = 500us HIGH, 1000us LOW
+1 = 975us HIGH, 475us LOW  
+0 = 475us HIGH, 975us LOW
 
 Delay between datagrams: 1300us
 
