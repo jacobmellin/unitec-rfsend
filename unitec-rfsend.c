@@ -24,11 +24,15 @@ void sendBit(int bit) {
   }
 }
 
-void pulse(char *codeString, int amount) {
+void pulse(char codeString[], int amount) {
   for (h = 0; h < amount; h++) {
     for (i = 0; i < strlen(codeString); i++){
-      //printf("%c",codeString[i]);
-      int bit = codeString[i] - '0';
+      char b = codeString[i];
+      if(b != *"1" && b != *"0") {
+        //printf("Skipping character \"%c\"\n", b);
+        continue;
+      }
+      int bit = b - '0';
       sendBit(bit);
     }
     delayMicroseconds(1300);
@@ -42,7 +46,7 @@ int main (int argc, char **argv)
 
   pinMode (pin, OUTPUT);
   digitalWrite(pin, LOW);
-  pulse(argv[1], 4);
+  pulse(argv[1], 10);
 
 
 
