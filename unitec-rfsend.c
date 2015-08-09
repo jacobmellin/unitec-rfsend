@@ -10,17 +10,17 @@ void sendBit(int bit) {
   if(bit == 1) {
     //printf("1 Sending long.\n");
     digitalWrite(pin, HIGH);
-    delayMicroseconds(975);
+    delayMicroseconds(1000);
     digitalWrite(pin, LOW);
-    delayMicroseconds(475);
+    delayMicroseconds(500);
   }
 
   if(bit == 0) {
     //printf("0 Sending short.\n");
     digitalWrite(pin, HIGH);
-    delayMicroseconds(475);
+    delayMicroseconds(500);
     digitalWrite(pin, LOW);
-    delayMicroseconds(975);
+    delayMicroseconds(1000);
   }
 }
 
@@ -35,7 +35,7 @@ void pulse(char codeString[], int amount) {
       int bit = b - '0';
       sendBit(bit);
     }
-    delayMicroseconds(1300);
+    delayMicroseconds(1500);
   }
   //delayMicroseconds(2950);
 }
